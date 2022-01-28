@@ -1,3 +1,4 @@
 class Account < ApplicationRecord
-  belongs_to :user
+  has_one :user
+  enum status: [:health, :danger, :bad]
 end
