@@ -9,9 +9,6 @@ class User < ApplicationRecord
   after_create :create_account
 
   def create_account
-    @user = User.new
-    if @user.save
-      Account.create(user: self) 
-    end 
+    Account.create!(user: self) 
   end
 end
