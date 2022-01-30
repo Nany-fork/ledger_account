@@ -7,8 +7,8 @@ class User < ApplicationRecord
   has_one :account
   after_create :create_account
 
-  def create_account
-    @user = User.last
+  def self.create_account
+    @user = :user
     @account = Account.new
     @user.account = @account
     @user.save
