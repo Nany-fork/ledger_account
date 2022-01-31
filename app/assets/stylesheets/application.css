@@ -101,7 +101,7 @@ body{
 
 /* register */
 
-.form-register{
+.form-content{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -126,4 +126,8 @@ h2{
   color: white;
   position: relative;
   margin: 20px;
+}
+
+.actions{
+  padding-top: 10%;
 }
