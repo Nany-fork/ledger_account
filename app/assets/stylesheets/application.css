@@ -98,3 +98,32 @@ body{
     width: 100%;
     }
 }  
+
+/* register */
+
+.form-register{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FAF9FC;
+  
+}
+
+.form-child{
+  background: #FAF9FC;
+  width: 22%;
+  height: auto;
+  color: black;
+  padding: 15px;
+}
+
+h2{
+  margin-left: 30%;
+}
+
+.register-error{
+  background: #F54456;
+  color: white;
+  position: relative;
+  margin: 20px;
+}
