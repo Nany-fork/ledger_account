@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_02_035449) do
+ActiveRecord::Schema.define(version: 2022_02_02_040817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,19 @@ ActiveRecord::Schema.define(version: 2022_02_02_035449) do
     t.index ["movement_category_id"], name: "index_movement_types_on_movement_category_id"
   end
 
+  create_table "movements", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.date "date"
+    t.integer "ammount"
+    t.bigint "movement_type_id", null: false
+    t.bigint "account_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["account_id"], name: "index_movements_on_account_id"
+    t.index ["movement_type_id"], name: "index_movements_on_movement_type_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -58,4 +71,6 @@ ActiveRecord::Schema.define(version: 2022_02_02_035449) do
 
   add_foreign_key "accounts", "users"
   add_foreign_key "movement_types", "movement_categories"
+  add_foreign_key "movements", "accounts"
+  add_foreign_key "movements", "movement_types"
 end
