@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :movement_types
   resources :movement_categories
   devise_for :users
   root 'pages#home'
