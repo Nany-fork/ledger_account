@@ -1,54 +1,42 @@
-<h2>Sign up</h2>
+<div class="register-error">
+    <% resource.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+</div>  
+<div class="form-content"> 
+  <div class="form-child">      
+    <%= form_for(resource, as: resource_name,html: {class: "pure-form pure-form-stacked"}, url: registration_path(resource_name)) do |f| %>
+      <h2>Sign up</h2>
+       
+      <label for="aligned-name">Username</label>
+      <%= f.text_field :name, autofocus: true, autocomplete: "name"  %>
+    
+    
+      <label for="aligned-password">Last name</label>
+      <%= f.text_field :last_name, autofocus: true, autocomplete: "last name" %>
+    
+      <label for="aligned-email">Email</label>
+      <%= f.email_field :email, autofocus: true %>
+    
+      <label for="aligned-foo">Age</label>
+      <%= f.number_field :age, autofocus: true, autocomplete: "age" %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, autofocus: true, autocomplete: "last name" %>
-  </div>
+      <label for="aligned-foo">City</label>
+      <%= f.text_field :city, autofocus: true, autocomplete: "city" %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+      <label for="aligned-foo">Country</label>
+      <%= f.text_field :country, autofocus: true, autocomplete: "country"%>
 
-  <div class="field">
-    <%= f.label :age %><br />
-    <%= f.number_field :age, autofocus: true, autocomplete: "age" %>
+      <label for="aligned-foo">Password</label>
+      <%= f.password_field :password, autocomplete: "new-password"  %>
+    
+      <label for="aligned-foo">Confirm Password</label>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    
+      <div class="actions">
+          <%= f.submit "Sign up",data: {turbo: false}, class:"pure-button pure-button-primary" %>
+          <%= render "devise/shared/links" %>
+      </div>
+    <% end %>
   </div>
-
-  <div class="field">
-    <%= f.label :city %><br />
-    <%= f.text_field :city, autofocus: true, autocomplete: "city" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :country %><br />
-    <%= f.text_field :country, autofocus: true, autocomplete: "country" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up",data: {turbo: false} %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

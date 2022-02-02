@@ -1,0 +1,87 @@
+<div>
+  <% if current_user %>
+    <div class="header">
+      <h1>Welcome <%= current_user.name %></h1>
+    </div>
+
+    <div class="menu-line">
+      <div class="line">
+      </div>
+      
+      <div class="pure-menu pure-menu-horizontal">
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item pure-menu-selected">
+            <a href="#" class="pure-menu-link">Home</a>
+          </li>
+
+
+          <li class="pure-menu-item pure-menu-selected">
+            <a href="#" class="pure-menu-link">Movements</a>
+          </li>
+          <li class="pure-menu-item pure-menu-selected">
+            <a href="#" class="pure-menu-link">Notifications</a>
+          </li>
+          <li class="pure-menu-item pure-menu-selected">
+            <a href="#" class="pure-menu-link">Home</a>
+          </li>
+          <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+            <a href="#" id="menuLink1" class="pure-menu-link">Setting</a>
+              <ul class="pure-menu-children">
+                <li class="pure-menu-item">
+                  <a href="#" class="pure-menu-link">Profile</a>
+                </li>
+
+                <li class="pure-menu-item">
+                  <%= link_to "Sign out", destroy_user_session_path, 'data-turbo-method': :delete %>
+                </li>
+              </ul>
+          </li>
+        </ul>
+      </div>
+    <div>
+  <% else %>
+    <div class="topnav">
+      <div class="icon">
+       <%= image_tag("https://images-leadger-2.s3.amazonaws.com/Verde+Oscuro+Simple+Pelota+F%C3%BAtbol+Americano+Logo.png?fbclid=IwAR1uU1fKxbG6jBmQBUyp7_F2LFr2hwCfFp8KRR-Apu9rfR4U0IG5sp7wVDo", width: 50) %>
+      </div>
+
+      <div class="iteam">
+        <a href="/users/sign_in">Login</a>
+        <a href="/users/sign_up" >Sign up</a>
+      </div>
+    </div>
+
+    <div class="background-image">
+        
+    </div>
+    
+    <div class="content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus</p>
+        <div class="row">
+          <div class="column">
+            <span class="icon" style="font-size: 40px;" >
+              <i class="fas fa-piggy-bank"></i>
+                Save money
+            </span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+          </div>
+      
+          <div class="column">
+            <span class="icon" style="font-size: 40px;" >
+              <i class="far fa-eye"></i>
+                view metrics
+            </span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+          </div>
+      
+          <div class="column">
+            <span class="icon" style="font-size: 40px;" >
+              <i class="fas fa-bell"></i>
+                Create reminders 
+            </span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+          </div>
+      </div>
+    <div>
+  <% end %>
+</div>
