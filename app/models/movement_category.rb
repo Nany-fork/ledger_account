@@ -1,0 +1,2 @@
+class MovementCategory < ApplicationRecord
+end
