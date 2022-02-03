@@ -83,8 +83,6 @@ test:
 #
 production:
   <<: *default
-  adapter: postgresql
-  encoding: unicode
   database: ledger_account_production
   username: ledger_account
-  password: 789456123
+  password: <%= ENV["LEDGER_ACCOUNT_DATABASE_PASSWORD"] %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_03_021753) do
+ActiveRecord::Schema.define(version: 2022_01_29_030431) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,34 +22,6 @@ ActiveRecord::Schema.define(version: 2022_02_03_021753) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_accounts_on_user_id"
-  end
-
-  create_table "movement_categories", force: :cascade do |t|
-    t.string "name"
-    t.bigint "movement_type_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["movement_type_id"], name: "index_movement_categories_on_movement_type_id"
-  end
-
-  create_table "movement_types", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "movements", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.date "date"
-    t.integer "ammount"
-    t.string "category"
-    t.bigint "movement_type_id", null: false
-    t.bigint "account_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["account_id"], name: "index_movements_on_account_id"
-    t.index ["movement_type_id"], name: "index_movements_on_movement_type_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -71,7 +43,4 @@ ActiveRecord::Schema.define(version: 2022_02_03_021753) do
   end
 
   add_foreign_key "accounts", "users"
-  add_foreign_key "movement_categories", "movement_types"
-  add_foreign_key "movements", "accounts"
-  add_foreign_key "movements", "movement_types"
 end
