@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @movement_category %>
+
+<div>
+  <%= link_to "Edit this movement category", edit_movement_category_path(@movement_category) %> |
+  <%= link_to "Back to movement categories", movement_categories_path %>
+
+  <%= button_to "Destroy this movement category", @movement_category, method: :delete %>
+</div>
