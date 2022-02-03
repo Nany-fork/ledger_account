@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :movements
   resources :movement_categories
   resources :movement_types
   devise_for :users
