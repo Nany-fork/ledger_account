@@ -32,18 +32,13 @@
   </div>
 
   <div>
+    <%= form.label :movement_type_id, style: "display: block" %>
+    <%= form.select :movement_type_id , options_from_collection_for_select(MovementType.all,:id, :name) %>
+  </div>
+
+  <div>
     <%= form.label :category, style: "display: block" %>
     <%= form.text_field :category %>
-  </div>
-
-  <div>
-    <%= form.label :movement_type_id, style: "display: block" %>
-    <%= form.text_field :movement_type_id %>
-  </div>
-
-  <div>
-    <%= form.label :account_id, style: "display: block" %>
-    <%= form.text_field :account_id %>
   </div>
 
   <div>

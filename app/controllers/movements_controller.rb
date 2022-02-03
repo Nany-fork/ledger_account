@@ -1,9 +1,13 @@
 class MovementsController < ApplicationController
   before_action :set_movement, only: %i[ show edit update destroy ]
-
+  after_action :authenticate_user!
   # GET /movements or /movements.json
   def index
-    @movements = Movement.all
+    # @movements = Movement.all
+    account = current_user.account
+    @movements = Movement.where(account_id: account.id)
+    @account_balance = current_user.account.balance
+    # @movement_type = MovementType.where(id: @movements.movement_category_id)
   end
 
   # GET /movements/1 or /movements/1.json
@@ -21,11 +25,15 @@ class MovementsController < ApplicationController
 
   # POST /movements or /movements.json
   def create
-    @movement = Movement.new(movement_params)
-
+    if params[:movement][:movement_type_id] == '1'
+       account = current_user.account
+       account.update(balance: account.balance + params[:movement][:ammount].to_i )
+    end
+    @movement = Movement.new(movement_params.merge(account: current_user.account))
+    # @movement.account = current_user.account
     respond_to do |format|
       if @movement.save
-        format.html { redirect_to movement_url(@movement), notice: "Movement was successfully created." }
+        format.html { redirect_to :root, notice: "Movement was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -60,6 +68,6 @@ class MovementsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def movement_params
-      params.require(:movement).permit(:name, :description, :date, :ammount, :category, :movement_type_id, :account_id)
+      params.require(:movement).permit(:name, :description, :date, :ammount, :category, :movement_type_id )
     end
 end
