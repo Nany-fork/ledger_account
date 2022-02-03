@@ -13,83 +13,62 @@
  *= require_tree .
  *= require_self
  */
-
 /* menu */
-body{
-  background: #0A0216;
-}
-
 .header {
-  background-color: #0A0216;
-  padding: 25px;
-  text-align: left;
-  color: #7494a3;
-}
+    background-color: #0e1112;
+    padding: 20px;
+    text-align: center;
+    color: #7494a3;
+  }
 
-.line {
-  margin-left: 2%;
-  width: 96%;
-  height: 8px;
-  background-image: linear-gradient(to right, rgb(245, 68, 86), rgb(252, 112, 34), rgb(214, 205, 0), rgb(145, 232, 39), rgb(0, 197, 128), rgb(0, 197, 128), rgb(48, 93, 251), rgb(118, 53, 222), rgb(249, 143, 209));
-}
-
-.pure-menu{
-  background-color: #FAF9FC;
-  text-align: center;
-}
-
-/* landing page */
-.background-image{
-  background-color: #0A0216;
-  padding: 20px;
-  text-align: center;
-  height:350px;
-  background-image: url("https://images-leadger-2.s3.amazonaws.com/ASYMETRIC.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+.image{
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
 }
   
 .topnav {
-  overflow: hidden;
-  background: linear-gradient(70deg, #0A0216, #5f2ab4);
-
-  display: flex;
-  justify-content: space-between;
-  overflow: hidden;
-  padding-left: 10px;
+    overflow: hidden;
+    background-color: #cc3e44;
+    display: flex;
+    
+    justify-content: space-between;
+    overflow: hidden;
 }
-
+  
+  
 .topnav a {
-  display: flex;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  color: #0e1112;
+    display: flex;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: #0e1112;
 }
   
 .icon, .iteam{
-  display:flex;
+    display:flex;
 }
   
 .topnav a:hover {
-  background-color: #FAF9FC;
-  color: black;
+    background-color: #7494a3;
+    color: black;
 }
 
+/* landing css */
 .content{
-  width:80%;
-  margin-left:auto;
-  margin-right:auto;
-  color: #FAF9FC;
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
 }
 .column {
   float: left;
   width: 28%;
   padding: 15px;
-  color:#b3a2d6;
+  
 }
 
 .row:after {
+  content: "";
   display: table;
   clear: both;
 }
@@ -99,36 +78,3 @@ body{
     width: 100%;
     }
 }  
-
-/* div center */
-
-.form-content{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #FAF9FC;
-  
-}
-
-.form-child{
-  background: #FAF9FC;
-  width: 22%;
-  height: auto;
-  color: black;
-  padding: 15px;
-}
-
-h2{
-  margin-left: 30%;
-}
-
-.register-error{
-  background: #F54456;
-  color: white;
-  position: relative;
-  margin: 20px;
-}
-
-.actions{
-  padding-top: 10%;
-}
