@@ -1,37 +1,13 @@
 <div id="<%= dom_id movement %>">
-  <p>
-    <strong>Name:</strong>
-    <%= movement.name %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= movement.description %>
-  </p>
-
-  <p>
-    <strong>Date:</strong>
-    <%= movement.date %>
-  </p>
-
-  <p>
-    <strong>Ammount:</strong>
-    <%= movement.ammount %>
-  </p>
-
-  <p>
-    <strong>Category:</strong>
-    <%= movement.category %>
-  </p>
-
-  <p>
-    <strong>Movement type:</strong>
-    <%= movement.movement_type_id %>
-  </p>
-
-  <p>
-    <strong>Account:</strong>
-    <%= movement.account_id %>
-  </p>
-
+  <tbody>
+    <tr>
+      <td><%= movement.name %></td>
+      <td><%= movement.description %></td>
+      <td><%= movement.date %></td>
+      <td><%= movement.ammount %></td>
+      <td><%= movement.category %></td>
+     <th><%= link_to "Show this movement", movement %></th>
+    </tr>
+  <tbody>
 </div>
+
