@@ -13,16 +13,10 @@
  *= require_tree .
  *= require_self
  */
-/* contetn-login */
-.content_page{
-  padding: 25px;
-  text-align: left;
-}
 
 /* menu */
 body{
   background: #0A0216;
-  color:white;
 }
 
 .header {
