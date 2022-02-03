@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Movement types</h1>
+
+<div id="movement_types">
+  <% @movement_types.each do |movement_type| %>
+    <%= render movement_type %>
+    <p>
+      <%= link_to "Show this movement type", movement_type %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New movement type", new_movement_type_path %>
