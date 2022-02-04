@@ -14,19 +14,23 @@
  *= require_self
  */
 /* contetn-login */
-.content_page{
+.content_page {
   padding: 25px;
   text-align: left;
 }
 
+.content-error {
+  color: #f54456;
+}
+
 /* menu */
-body{
-  background: #0A0216;
-  color:white;
+body {
+  background: #0a0216;
+  color: white;
 }
 
 .header {
-  background-color: #0A0216;
+  background-color: #0a0216;
   padding: 25px;
   text-align: left;
   color: #7494a3;
@@ -36,28 +40,39 @@ body{
   margin-left: 2%;
   width: 96%;
   height: 8px;
-  background-image: linear-gradient(to right, rgb(245, 68, 86), rgb(252, 112, 34), rgb(214, 205, 0), rgb(145, 232, 39), rgb(0, 197, 128), rgb(0, 197, 128), rgb(48, 93, 251), rgb(118, 53, 222), rgb(249, 143, 209));
+  background-image: linear-gradient(
+    to right,
+    rgb(245, 68, 86),
+    rgb(252, 112, 34),
+    rgb(214, 205, 0),
+    rgb(145, 232, 39),
+    rgb(0, 197, 128),
+    rgb(0, 197, 128),
+    rgb(48, 93, 251),
+    rgb(118, 53, 222),
+    rgb(249, 143, 209)
+  );
 }
 
-.pure-menu{
-  background-color: #FAF9FC;
+.pure-menu {
+  background-color: #faf9fc;
   text-align: center;
 }
 
 /* landing page */
-.background-image{
-  background-color: #0A0216;
+.background-image {
+  background-color: #0a0216;
   padding: 20px;
   text-align: center;
-  height:350px;
+  height: 350px;
   background-image: url("https://images-leadger-2.s3.amazonaws.com/ASYMETRIC.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
-  
+
 .topnav {
   overflow: hidden;
-  background: linear-gradient(70deg, #0A0216, #5f2ab4);
+  background: linear-gradient(70deg, #0a0216, #5f2ab4);
 
   display: flex;
   justify-content: space-between;
@@ -72,27 +87,28 @@ body{
   text-decoration: none;
   color: #0e1112;
 }
-  
-.icon, .iteam{
-  display:flex;
+
+.icon,
+.iteam {
+  display: flex;
 }
-  
+
 .topnav a:hover {
-  background-color: #FAF9FC;
+  background-color: #faf9fc;
   color: black;
 }
 
-.content{
-  width:80%;
-  margin-left:auto;
-  margin-right:auto;
-  color: #FAF9FC;
+.content {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  color: #faf9fc;
 }
 .column {
   float: left;
   width: 28%;
   padding: 15px;
-  color:#b3a2d6;
+  color: #b3a2d6;
 }
 
 .row:after {
@@ -100,41 +116,40 @@ body{
   clear: both;
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width: 600px) {
   .column {
     width: 100%;
-    }
-}  
+  }
+}
 
 /* div center */
 
-.form-content{
+.form-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #FAF9FC;
-  
+  color: #faf9fc;
 }
 
-.form-child{
-  background: #FAF9FC;
+.form-child {
+  background: #faf9fc;
   width: 22%;
   height: auto;
   color: black;
   padding: 15px;
 }
 
-h2{
+h2 {
   margin-left: 30%;
 }
 
-.register-error{
-  background: #F54456;
+.register-error {
+  background: #f54456;
   color: white;
   position: relative;
   margin: 20px;
 }
 
-.actions{
+.actions {
   padding-top: 10%;
 }
