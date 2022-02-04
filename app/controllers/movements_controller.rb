@@ -8,25 +8,18 @@ class MovementsController < ApplicationController
     @account_balance = current_user.account.balance
   end
 
-
   def show
   end
-
  
   def new
     @movement = Movement.new
   end
 
-
   def edit
+
   end
 
- 
   def create
-    # if params[:movement][:movement_type_id] == '1'
-    #    account = current_user.account
-    #    account.update(balance: account.balance + params[:movement][:ammount].to_i )
-    # end
     @movement = Movement.new(movement_params.merge(account: current_user.account))
     # @movement.account = current_user.account
     respond_to do |format|
@@ -48,7 +41,6 @@ class MovementsController < ApplicationController
     end
   end
 
- 
   def destroy
     @movement.destroy
 

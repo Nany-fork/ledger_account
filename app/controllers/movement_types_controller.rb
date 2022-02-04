@@ -1,6 +1,6 @@
 class MovementTypesController < ApplicationController
   before_action :set_movement_type, only: %i[ show edit update destroy ]
-
+  after_action :authenticate_user!
   # GET /movement_types or /movement_types.json
   def index
     @movement_types = MovementType.all

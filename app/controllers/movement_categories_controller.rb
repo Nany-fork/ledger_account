@@ -1,6 +1,6 @@
 class MovementCategoriesController < ApplicationController
   before_action :set_movement_category, only: %i[ show edit update destroy ]
-
+  after_action :authenticate_user!
   # GET /movement_categories or /movement_categories.json
   def index
     @movement_categories = MovementCategory.all
