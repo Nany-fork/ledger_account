@@ -7,16 +7,9 @@ class MovementsController < ApplicationController
     @movements = account.movements
     @account_balance = current_user.account.balance
   end
-
-  def show
-  end
  
   def new
     @movement = Movement.new
-  end
-
-  def edit
-
   end
 
   def create
