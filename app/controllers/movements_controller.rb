@@ -17,7 +17,7 @@ class MovementsController < ApplicationController
     # @movement.account = current_user.account
     respond_to do |format|
       if @movement.save
-        format.html { redirect_to :root, notice: "Movement was successfully created." }
+        format.html { redirect_to movements_path, notice: "Movement was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
