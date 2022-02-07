@@ -1,9 +1,12 @@
-<h1>New movement category</h1>
-
-<%= render "form", movement_category: @movement_category %>
-
-<br>
-
-<div>
-  <%= link_to "Back to movement categories", movement_categories_path %>
+<%= render "navbar" %>
+<br/>
+<div class="form-content">
+  <div class="form-child">
+    <h1>New movement category</h1>
+    <%= render "form", movement_category: @movement_category %>
+    <br>
+    <div>
+      <%= link_to "Back to movement categories", new_movement_path, class: "pure-button pure-button-active" %>
+    </div>
+  </div>
 </div>
