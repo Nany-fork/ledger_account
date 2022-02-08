@@ -20,22 +20,20 @@
   justify-content: center;
   position: fixed;
   top: 0;
-  left: 25%;
+  left: 22%;
   height: 80vh;
   width: 80vh;
-  opacity: 0.9;
-  backdrop-filter: blur(15px);
+ 
 }
 
 .modal {
   width: 600px;
-  background-color: #faf9fc;
+  background-color: #474952;
   max-width: 100%;
   padding: 30px, 50px;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(252, 0, 0, 0.2);
   text-align: center;
-  color: #f54456;
+  color: #faf9fc;
 }
 
 .button_border {
@@ -47,10 +45,9 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  left: 60%;
-  bottom: 15px;
   position: relative;
   font-size: 14px;
+  margin-left: 10%;
   cursor: pointer;
 }
 
@@ -174,7 +171,7 @@ body {
 
 .form-child {
   background: #faf9fc;
-  width: 35%;
+  width: 55%;
   height: auto;
   color: black;
   padding: 15px;
