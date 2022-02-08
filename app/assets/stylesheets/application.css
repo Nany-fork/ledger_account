@@ -171,6 +171,14 @@ body {
 
 .form-child {
   background: #faf9fc;
+  width: 25%;
+  height: auto;
+  color: black;
+  padding: 15px;
+}
+
+.form-child-movement {
+  background: #faf9fc;
   width: 55%;
   height: auto;
   color: black;
