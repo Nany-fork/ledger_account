@@ -28,9 +28,11 @@
     <%= form.label :movement_type_id, style: "display: block" %>
     <%= form.select :movement_type_id, options_from_collection_for_select(MovementType.all, :id, :name) %>
   </div>
-  <div>
+  <br/>
+  <div >
     <%= form.label :category, style: "display: block" %>
     <%= form.text_field :category %>
+    <%= link_to "+", new_movement_category_path, id: "open", data: { turbo_frame: "modal" }, class: "button_border" %>
   </div>
   <div>
     <%= form.submit %>

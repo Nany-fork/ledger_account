@@ -6,6 +6,7 @@
       <div class="content-error"><%= message %></div>
     <% end %>
   </div>
+  <br/>
   <div>
     <%= form.label :movement_type_id, style: "display: block" %>
     <%= form.select :movement_type_id, options_from_collection_for_select(MovementType.all, :id, :name) %>
@@ -16,5 +17,6 @@
   <br/>
   <div>
     <%= form.submit class: "pure-button pure-button-primary" %>
+     <%= link_to "Cancel", new_movement_path, class: "pure-button pure-button-active" %>
   </div>
 <% end %>

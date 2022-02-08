@@ -1,12 +1,9 @@
-<%= render "navbar" %>
-<br/>
-<div class="form-content">
-  <div class="form-child">
-    <h1>New movement category</h1>
-    <%= render "form", movement_category: @movement_category %>
-    <br>
-    <div>
-      <%= link_to "Back to movement categories", new_movement_path, class: "pure-button pure-button-active" %>
+<%= turbo_frame_tag "modal" do %>
+  <div class="modal-center" id="modal_center">
+    <div class="modal">
+        <h1>New category</h1>
+        <%= render "form", movement_category: @movement_category %>
+        
     </div>
   </div>
-</div>
+<% end %>
