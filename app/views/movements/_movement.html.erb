@@ -1,0 +1,15 @@
+<div id="<%= dom_id movement %>">
+  <tbody>
+    <tr>
+      <% if movement.present? %>
+        <%= tag.td movement.name %>
+        <%= tag.td movement.description %>
+        <%= tag.td movement.date.to_formatted_s(:long) %>
+        <%= tag.td movement.ammount %>
+        <%= tag.td movement.category %>
+        <%= tag.td link_to "Show this movement", movement %>
+      <% end %>  
+    </tr>
+  <tbody>
+</div>
+

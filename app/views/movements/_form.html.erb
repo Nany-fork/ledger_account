@@ -1,0 +1,38 @@
+<%= form_with(model: movement) do |form| %>
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+    <% @movement.errors.full_messages_for(:name).each do |message| %>
+      <div class="content-error"><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_field :description %>
+    <% @movement.errors.full_messages_for(:description).each do |message| %>
+      <div class="content-error"><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :date, style: "display: block" %>
+    <%= form.date_field :date %>
+    <% @movement.errors.full_messages_for(:date).each do |message| %>
+      <div class="content-error"><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :ammount, style: "display: block" %>
+    <%= form.number_field :ammount %>
+  </div>
+  <div>
+    <%= form.label :movement_type_id, style: "display: block" %>
+    <%= form.select :movement_type_id, options_from_collection_for_select(MovementType.all, :id, :name) %>
+  </div>
+  <div>
+    <%= form.label :category, style: "display: block" %>
+    <%= form.text_field :category %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
