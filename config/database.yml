@@ -83,6 +83,6 @@ test:
 #
 production:
   <<: *default
-  database: ledger_account_production
+  database: <%= ENV["LEDGER_DATABASE"] %>
   username: ledger_account
   password: <%= ENV["LEDGER_ACCOUNT_DATABASE_PASSWORD"] %>
