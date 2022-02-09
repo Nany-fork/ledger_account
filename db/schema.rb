@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_03_021753) do
-
+ActiveRecord::Schema[7.0].define(version: 2022_02_03_021753) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,23 +18,23 @@ ActiveRecord::Schema.define(version: 2022_02_03_021753) do
     t.integer "balance", default: 0
     t.integer "status", default: 0
     t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_accounts_on_user_id"
   end
 
   create_table "movement_categories", force: :cascade do |t|
     t.string "name"
     t.bigint "movement_type_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["movement_type_id"], name: "index_movement_categories_on_movement_type_id"
   end
 
   create_table "movement_types", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "movements", force: :cascade do |t|
@@ -46,8 +45,8 @@ ActiveRecord::Schema.define(version: 2022_02_03_021753) do
     t.string "category"
     t.bigint "movement_type_id", null: false
     t.bigint "account_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["account_id"], name: "index_movements_on_account_id"
     t.index ["movement_type_id"], name: "index_movements_on_movement_type_id"
   end
@@ -56,16 +55,16 @@ ActiveRecord::Schema.define(version: 2022_02_03_021753) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
-    t.datetime "reset_password_sent_at", precision: 6
-    t.datetime "remember_created_at", precision: 6
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.string "name"
     t.string "last_name"
     t.string "image"
     t.integer "age"
     t.string "city"
     t.string "country"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
