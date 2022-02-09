@@ -81,7 +81,5 @@ test:
 #
 production:
   <<: *default
-  adapter: postgresql
-  encoding: unicode
   database: ledger_account_production
   username: ledger_account
