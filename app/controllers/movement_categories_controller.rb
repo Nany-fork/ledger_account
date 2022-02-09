@@ -18,7 +18,7 @@ class MovementCategoriesController < ApplicationController
 
     respond_to do |format|
       if @movement_category.save
-        format.html { redirect_to movement_category_url(@movement_category), notice: "Movement category was successfully created." }
+        format.html { redirect_to new_movement_path , notice: "Movement category was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
