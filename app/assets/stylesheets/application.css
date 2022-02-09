@@ -13,6 +13,44 @@
  *= require_tree .
  *= require_self
  */
+/* modal */
+.modal-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 22%;
+  height: 80vh;
+  width: 80vh;
+ 
+}
+
+.modal {
+  width: 600px;
+  background-color: #474952;
+  max-width: 100%;
+  padding: 30px, 50px;
+  border-radius: 5px;
+  text-align: center;
+  color: #faf9fc;
+}
+
+.button_border {
+  border-radius: 100%;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  font-size: 14px;
+  margin-left: 10%;
+  cursor: pointer;
+}
+
 /* contetn-login */
 .content_page {
   padding: 25px;
@@ -133,7 +171,15 @@ body {
 
 .form-child {
   background: #faf9fc;
-  width: 22%;
+  width: 25%;
+  height: auto;
+  color: black;
+  padding: 15px;
+}
+
+.form-child-movement {
+  background: #faf9fc;
+  width: 55%;
   height: auto;
   color: black;
   padding: 15px;
