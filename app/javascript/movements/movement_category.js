@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("turbo:load", function () {
     const movementSelect = document.querySelector("#movement_movement_type_id");
     const movementFilt = document.querySelector("#movement_category");
     movementSelect.addEventListener("change", function (e) {
