@@ -25,7 +25,7 @@ class MovementsController < ApplicationController
     @total_of_month = @income_movements.where('extract(month from date) = ?', Date.today.strftime("%m")).sum(:ammount)
 
     #Return the number of catgories that has the movements of one user, category is a string defined by the type of movement
-    @category = @movements.group(:category).count
+    @category_count = @movements.group(:category).count
 
     #Returns according to the types of movements [income, egress] is the case, your record in the month 
     @movements_graph = @movements.map do |movement|
