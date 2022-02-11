@@ -29,7 +29,7 @@ class MovementsController < ApplicationController
 
     #Returns according to the types of movements [income, egress] is the case, your record in the month 
     @movements_graph = @movements.map do |movement|
-        { name: movement.category, data: Movement.where(category: movement.category).group_by_week(:date).sum(:ammount) }
+        { name: movement.category, data: @movements.where(category: movement.category).group_by_week(:date).sum(:ammount) }
       end
   end
  
