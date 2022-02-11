@@ -16,13 +16,13 @@ class MovementsController < ApplicationController
     @movements = current_user.account.movements
     
     #filtering manually the movement type that a i want to filter
-    type_movement = MovementType.find_by(name:'Income')
+    movement_type = MovementType.find_by(name:'Income')
 
     #return the movements of the incomes filter
-    @income_movements = @movements.where(movement_type_id:type_movement.id)
+    @income_movements = @movements.where(movement_type_id:movement_type.id)
     
-    #return the movements of the incomes filter by the current mount
-    @total_of_mount = @income_movements.where('extract(month from date) = ?', Date.today.strftime("%m")).sum(:ammount)
+    #return the movements of the incomes filter by the current month
+    @total_of_month = @income_movements.where('extract(month from date) = ?', Date.today.strftime("%m")).sum(:ammount)
 
     #Return the number of catgories that has the movements of one user, category is a string defined by the type of movement
     @category = @movements.group(:category).count
