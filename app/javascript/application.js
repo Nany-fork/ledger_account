@@ -2,3 +2,5 @@
 import "@hotwired/turbo-rails";
 import "controllers";
 import "movements/movement_category"
+import "chartkick"
+import "Chart.bundle"

@@ -7,6 +7,31 @@ class MovementsController < ApplicationController
     @movements = account.movements
     @account_balance = current_user.account.balance
   end
+
+  def graphics
+    #the account return the accumulated balance 
+    @account = current_user.account
+     
+    #the movements of the currents user 
+    @movements = current_user.account.movements
+    
+    #filtering manually the movement type that a i want to filter
+    movement_type = MovementType.find_by(name:'Income')
+
+    #return the movements of the incomes filter
+    @income_movements = @movements.where(movement_type_id:movement_type.id)
+    
+    #return the movements of the incomes filter by the current month
+    @total_of_month = @income_movements.where('extract(month from date) = ?', Date.today.strftime("%m")).sum(:ammount)
+
+    #Return the number of catgories that has the movements of one user, category is a string defined by the type of movement
+    @category_count = @movements.group(:category).count
+
+    #Returns according to the types of movements [income, egress] is the case, your record in the month 
+    @movements_graph = @movements.map do |movement|
+        { name: movement.category, data: @movements.where(category: movement.category).group_by_week(:date).sum(:ammount) }
+      end
+  end
  
   def new
     @movement = Movement.new
