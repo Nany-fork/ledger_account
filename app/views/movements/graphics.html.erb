@@ -1,0 +1,29 @@
+<%= render "navbar" %>
+<div class="content_page">
+  <div class="pure-g">
+    <div class="pure-u-1-2"> 
+      <h1>Dashboard</h1>
+ </div>
+    <div class="pure-u-1-2"> 
+      <h1>Total balance <%= @account.balance %> </h1>
+ 
+      <h5>Status <%= @account.status %></h5>
+   </div>
+  </div>
+  <div class="pure-u-3-4">
+    <h4>Result by <%= Date.today.strftime("%B") %> <%= @total_of_mount %> </h4>
+  </div>
+  <div class="pure-u-2-5">
+    <br/>
+    <%= line_chart @income_for_amonth_graph, prefix: "$", thousands: "," %>
+  </div>
+  <div class="pure-u-2-5">
+    <br/>
+    <%= pie_chart @category %>
+  </div>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <%= line_chart @movements_graph %>
+</div>

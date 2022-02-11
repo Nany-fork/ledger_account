@@ -7,6 +7,26 @@ class MovementsController < ApplicationController
     @movements = account.movements
     @account_balance = current_user.account.balance
   end
+
+  def graphics
+    # current balance
+    @account = current_user.account
+     
+    # movientos del usuario de la cuenta
+    @movements = current_user.account.movements
+    
+    # movimientos del mes reccurente
+    type_movement = MovementType.find_by(name:'Income')
+    @income_for_amonth = @movements.where(movement_type_id:type_movement.id) 
+    @total_of_mount = @income_for_amonth.where('extract(month from date) = ?', Date.today.strftime("%m")).sum(:ammount)
+
+    # graficas
+    @income_for_amonth_graph= @movements.where(movement_type_id:type_movement.id).group_by_month(:date).sum(:ammount)
+    @category = @movements.group(:category).count
+    @movements_graph = @movements.map do |x|
+      { name: x.name, data: Movement.where(category: x.category).group_by_month(:date).sum(:ammount) }
+    end
+  end
  
   def new
     @movement = Movement.new
